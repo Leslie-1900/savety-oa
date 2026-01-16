@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>安全目标管理 - 安全生产管理系统</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="page-header">
+        <h1 class="page-title">安全目标管理</h1>
+        <p class="page-description">制定、分解、跟踪和考核企业安全目标</p>
+    </div>
+
+    <!-- 统计卡片 -->
+    <div class="stats-grid">
+        <div class="stat-card">
+            <div class="stat-icon" style="background: #3b82f6;">
+                <i class="fas fa-bullseye"></i>
+            </div>
+            <div class="stat-content">
+                <div class="stat-number">15</div>
+                <div class="stat-label">年度安全目标</div>
+            </div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon" style="background: #10b981;">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <div class="stat-content">
+                <div class="stat-number">8</div>
+                <div class="stat-label">已完成目标</div>
+            </div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon" style="background: #f59e0b;">
+                <i class="fas fa-spinner"></i>
+            </div>
+            <div class="stat-content">
+                <div class="stat-number">5</div>
+                <div class="stat-label">进行中目标</div>
+            </div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon" style="background: #ef4444;">
+                <i class="fas fa-exclamation-circle"></i>
+            </div>
+            <div class="stat-content">
+                <div class="stat-number">2</div>
+                <div class="stat-label">滞后目标</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 操作工具栏 -->
+    <div class="card">
+        <div class="card-body">
+            <div style="display: flex; gap: 10px; align-items: center;">
+                <button class="btn btn-primary">
+                    <i class="fas fa-plus"></i>
+                    新增目标
+                </button>
+                <button class="btn btn-success">
+                    <i class="fas fa-chart-line"></i>
+                    目标分解
+                </button>
+                <button class="btn btn-warning">
+                    <i class="fas fa-clipboard-check"></i>
+                    考核评估
+                </button>
+                <button class="btn btn-outline">
+                    <i class="fas fa-file-export"></i>
+                    导出报表
+                </button>
+                <div style="flex: 1;"></div>
+                <select class="form-control" style="width: 150px;">
+                    <option>全部状态</option>
+                    <option>进行中</option>
+                    <option>已完成</option>
+                    <option>已滞后</option>
+                </select>
+                <select class="form-control" style="width: 150px;">
+                    <option>2024年度</option>
+                    <option>2023年度</option>
+                    <option>2022年度</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <!-- 目标列表 -->
+    <div class="card">
+        <div class="card-header">
+            <div class="card-title">安全目标列表</div>
+            <div style="display: flex; gap: 10px; align-items: center;">
+                <div style="display: flex; gap: 5px;">
+                    <span class="status-badge status-success">已完成 8</span>
+                    <span class="status-badge status-warning">进行中 5</span>
+                    <span class="status-badge status-danger">滞后 2</span>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>目标名称</th>
+                        <th>责任部门</th>
+                        <th>责任人</th>
+                        <th>计划周期</th>
+                        <th>进度</th>
+                        <th>状态</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div style="font-weight: 500;">重大事故为零</div>
+                            <div style="font-size: 12px; color: #6b7280;">杜绝重大生产安全事故</div>
+                        </td>
+                        <td>安全管理部门</td>
+                        <td>张三</td>
+                        <td>2024.01-2024.12</td>
+                        <td>
+                            <div style="display: flex; align-items: center; gap: 8px;">
+                                <div style="width: 100px; height: 6px; background: #e5e7eb; border-radius: 3px;">
+                                    <div style="width: 100%; height: 100%; background: #10b981; border-radius: 3px;"></div>
+                                </div>
+                                <span style="font-size: 12px;">100%</span>
+                            </div>
+                        </td>
+                        <td><span class="status-badge status-success">已完成</span></td>
+                        <td>
+                            <button class="btn btn-outline" style="padding: 4px 8px; font-size: 12px;">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button class="btn btn-outline" style="padding: 4px 8px; font-size: 12px;">
+                                <i class="fas fa-chart-bar"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div style="font-weight: 500;">隐患整改率≥95%</div>
+                            <div style="font-size: 12px; color: #6b7280;">提高隐患整改效率</div>
+                        </td>
+                        <td>各生产部门</td>
+                        <td>李四</td>
+                        <td>2024.01-2024.12</td>
+                        <td>
+                            <div style="display: flex; align-items: center; gap: 8px;">
+                                <div style="width: 100px; height: 6px; background: #e5e7eb; border-radius: 3px;">
+                                    <div style="width: 85%; height: 100%; background: #f59e0b; border-radius: 3px;"></div>
+                                </div>
+                                <span style="font-size: 12px;">85%</span>
+                            </div>
+                        </td>
+                        <td><span class="status-badge status-warning">进行中</span></td>
+                        <td>
+                            <button class="btn btn-outline" style="padding: 4px 8px; font-size: 12px;">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="btn btn-outline" style="padding: 4px 8px; font-size: 12px;">
+                                <i class="fas fa-chart-bar"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div style="font-weight: 500;">安全培训覆盖率100%</div>
+                            <div style="font-size: 12px; color: #6b7280;">全员安全培训</div>
+                        </td>
+                        <td>人力资源部</td>
+                        <td>王五</td>
+                        <td>2024.01-2024.12</td>
+                        <td>
+                            <div style="display: flex; align-items: center; gap: 8px;">
+                                <div style="width: 100px; height: 6px; background: #e5e7eb; border-radius: 3px;">
+                                    <div style="width: 92%; height: 100%; background: #10b981; border-radius: 3px;"></div>
+                                </div>
+                                <span style="font-size: 12px;">92%</span>
+                            </div>
+                        </td>
+                        <td><span class="status-badge status-success">已完成</span></td>
+                        <td>
+                            <button class="btn btn-outline" style="padding: 4px 8px; font-size: 12px;">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button class="btn btn-outline" style="padding: 4px 8px; font-size: 12px;">
+                                <i class="fas fa-chart-bar"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div style="font-weight: 500;">应急预案演练完成率100%</div>
+                            <div style="font-size: 12px; color: #6b7280;">年度应急演练计划</div>
+                        </td>
+                        <td>应急管理</td>
+                        <td>赵六</td>
+                        <td>2024.01-2024.12</td>
+                        <td>
+                            <div style="display: flex; align-items: center; gap: 8px;">
+                                <div style="width: 100px; height: 6px; background: #e5e7eb; border-radius: 3px;">
+                                    <div style="width: 45%; height: 100%; background: #ef4444; border-radius: 3px;"></div>
+                                </div>
+                                <span style="font-size: 12px;">45%</span>
+                            </div>
+                        </td>
+                        <td><span class="status-badge status-danger">滞后</span></td>
+                        <td>
+                            <button class="btn btn-outline" style="padding: 4px 8px; font-size: 12px;">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="btn btn-outline" style="padding: 4px 8px; font-size: 12px;">
+                                <i class="fas fa-chart-bar"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div style="font-weight: 500;">设备完好率≥98%</div>
+                            <div style="font-size: 12px; color: #6b7280;">生产设备维护保养</div>
+                        </td>
+                        <td>设备维护</td>
+                        <td>钱七</td>
+                        <td>2024.01-2024.12</td>
+                        <td>
+                            <div style="display: flex; align-items: center; gap: 8px;">
+                                <div style="width: 100px; height: 6px; background: #e5e7eb; border-radius: 3px;">
+                                    <div style="width: 78%; height: 100%; background: #f59e0b; border-radius: 3px;"></div>
+                                </div>
+                                <span style="font-size: 12px;">78%</span>
+                            </div>
+                        </td>
+                        <td><span class="status-badge status-warning">进行中</span></td>
+                        <td>
+                            <button class="btn btn-outline" style="padding: 4px 8px; font-size: 12px;">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="btn btn-outline" style="padding: 4px 8px; font-size: 12px;">
+                                <i class="fas fa-chart-bar"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- 目标分解详情 -->
+    <div class="card">
+        <div class="card-header">
+            <div class="card-title">目标分解详情 - 隐患整改率≥95%</div>
+        </div>
+        <div class="card-body">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 20px;">
+                <div style="text-align: center; padding: 15px; background: #f8fafc; border-radius: 8px;">
+                    <div style="font-size: 24px; font-weight: 600; color: #1e40af;">95%</div>
+                    <div style="font-size: 14px; color: #6b7280;">目标值</div>
+                </div>
+                <div style="text-align: center; padding: 15px; background: #f8fafc; border-radius: 8px;">
+                    <div style="font-size: 24px; font-weight: 600; color: #f59e0b;">85%</div>
+                    <div style="font-size: 14px; color: #6b7280;">当前完成</div>
+                </div>
+                <div style="text-align: center; padding: 15px; background: #f8fafc; border-radius: 8px;">
+                    <div style="font-size: 24px; font-weight: 600; color: #10b981;">156</div>
+                    <div style="font-size: 14px; color: #6b7280;">已整改数</div>
+                </div>
+                <div style="text-align: center; padding: 15px; background: #f8fafc; border-radius: 8px;">
+                    <div style="font-size: 24px; font-weight: 600; color: #ef4444;">12</div>
+                    <div style="font-size: 14px; color: #6b7280;">待整改数</div>
+                </div>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <!-- 部门分解 -->
+                <div>
+                    <h3 style="margin-bottom: 15px; font-size: 16px; color: #374151;">部门分解情况</h3>
+                    <table class="table" style="font-size: 14px;">
+                        <thead>
+                            <tr>
+                                <th>部门</th>
+                                <th>目标值</th>
+                                <th>完成率</th>
+                                <th>状态</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>生产车间</td>
+                                <td>95%</td>
+                                <td>92%</td>
+                                <td><span class="status-badge status-success">达标</span></td>
+                            </tr>
+                            <tr>
+                                <td>设备维护</td>
+                                <td>95%</td>
+                                <td>88%</td>
+                                <td><span class="status-badge status-warning">预警</span></td>
+                            </tr>
+                            <tr>
+                                <td>仓储物流</td>
+                                <td>95%</td>
+                                <td>78%</td>
+                                <td><span class="status-badge status-danger">滞后</span></td>
+                            </tr>
+                            <tr>
+                                <td>安全监督</td>
+                                <td>95%</td>
+                                <td>96%</td>
+                                <td><span class="status-badge status-success">达标</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <!-- 月度趋势 -->
+                <div>
+                    <h3 style="margin-bottom: 15px; font-size: 16px; color: #374151;">月度趋势</h3>
+                    <div style="background: #f8fafc; padding: 20px; border-radius: 8px; height: 200px; display: flex; align-items: end; gap: 10px;">
+                        <div style="flex: 1; display: flex; flex-direction: column; align-items: center;">
+                            <div style="background: #3b82f6; height: 60px; width: 30px; border-radius: 4px 4px 0 0;"></div>
+                            <div style="font-size: 12px; margin-top: 5px;">1月</div>
+                        </div>
+                        <div style="flex: 1; display: flex; flex-direction: column; align-items: center;">
+                            <div style="background: #3b82f6; height: 80px; width: 30px; border-radius: 4px 4px 0 0;"></div>
+                            <div style="font-size: 12px; margin-top: 5px;">2月</div>
+                        </div>
+                        <div style="flex: 1; display: flex; flex-direction: column; align-items: center;">
+                            <div style="background: #3b82f6; height: 95px; width: 30px; border-radius: 4px 4px 0 0;"></div>
+                            <div style="font-size: 12px; margin-top: 5px;">3月</div>
+                        </div>
+                        <div style="flex: 1; display: flex; flex-direction: column; align-items: center;">
+                            <div style="background: #3b82f6; height: 110px; width: 30px; border-radius: 4px 4px 0 0;"></div>
+                            <div style="font-size: 12px; margin-top: 5px;">4月</div>
+                        </div>
+                        <div style="flex: 1; display: flex; flex-direction: column; align-items: center;">
+                            <div style="background: #10b981; height: 140px; width: 30px; border-radius: 4px 4px 0 0;"></div>
+                            <div style="font-size: 12px; margin-top: 5px;">5月</div>
+                        </div>
+                        <div style="flex: 1; display: flex; flex-direction: column; align-items: center;">
+                            <div style="background: #10b981; height: 160px; width: 30px; border-radius: 4px 4px 0 0;"></div>
+                            <div style="font-size: 12px; margin-top: 5px;">6月</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

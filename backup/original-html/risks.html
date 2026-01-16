@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>风险隐患管理 - 安全生产管理系统</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="page-header">
+        <h1 class="page-title">风险隐患管理</h1>
+        <p class="page-description">风险识别评估、隐患上报、整改跟踪和统计分析</p>
+    </div>
+
+    <!-- 统计卡片 -->
+    <div class="stats-grid">
+        <div class="stat-card">
+            <div class="stat-icon" style="background: #3b82f6;">
+                <i class="fas fa-exclamation-triangle"></i>
+            </div>
+            <div class="stat-content">
+                <div class="stat-number">12</div>
+                <div class="stat-label">待处理隐患</div>
+            </div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon" style="background: #10b981;">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <div class="stat-content">
+                <div class="stat-number">156</div>
+                <div class="stat-label">已整改隐患</div>
+            </div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon" style="background: #f59e0b;">
+                <i class="fas fa-spinner"></i>
+            </div>
+            <div class="stat-content">
+                <div class="stat-number">8</div>
+                <div class="stat-label">整改中</div>
+            </div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon" style="background: #ef4444;">
+                <i class="fas fa-clock"></i>
+            </div>
+            <div class="stat-content">
+                <div class="stat-number">4</div>
+                <div class="stat-label">超期未整改</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 操作工具栏 -->
+    <div class="card">
+        <div class="card-body">
+            <div style="display: flex; gap: 10px; align-items: center;">
+                <button class="btn btn-primary">
+                    <i class="fas fa-plus"></i>
+                    隐患上报
+                </button>
+                <button class="btn btn-success">
+                    <i class="fas fa-search"></i>
+                    风险识别
+                </button>
+                <button class="btn btn-warning">
+                    <i class="fas fa-chart-pie"></i>
+                    统计分析
+                </button>
+                <button class="btn btn-outline">
+                    <i class="fas fa-file-export"></i>
+                    导出报表
+                </button>
+                <div style="flex: 1;"></div>
+                <select class="form-control" style="width: 150px;">
+                    <option>全部类型</option>
+                    <option>设备隐患</option>
+                    <option>环境隐患</option>
+                    <option>管理隐患</option>
+                    <option>行为隐患</option>
+                </select>
+                <select class="form-control" style="width: 150px;">
+                    <option>全部状态</option>
+                    <option>待处理</option>
+                    <option>整改中</option>
+                    <option>待验收</option>
+                    <option>已完成</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <!-- 隐患列表 -->
+    <div class="card">
+        <div class="card-header">
+            <div class="card-title">隐患列表</div>
+            <div style="display: flex; gap: 10px; align-items: center;">
+                <div style="display: flex; gap: 5px;">
+                    <span class="status-badge status-danger">待处理 12</span>
+                    <span class="status-badge status-warning">整改中 8</span>
+                    <span class="status-badge status-info">待验收 5</span>
+                    <span class="status-badge status-success">已完成 156</span>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>隐患编号</th>
+                        <th>隐患描述</th>
+                        <th>隐患类型</th>
+                        <th>上报人</th>
+                        <th>上报时间</th>
+                        <th>风险等级</th>
+                        <th>整改状态</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>HD-2024072001</td>
+                        <td>
+                            <div style="font-weight: 500;">生产车间设备漏电隐患</div>
+                            <div style="font-size: 12px; color: #6b7280;">设备编号：EQ-2024-001</div>
+                        </td>
+                        <td><span class="status-badge status-info">设备隐患</span></td>
+                        <td>张三</td>
+                        <td>2024-07-20 09:30</td>
+                        <td><span class="status-badge status-danger">重大风险</span></td>
+                        <td><span class="status-badge status-danger">待处理</span></td>
+                        <td>
+                            <button class="btn btn-outline" style="padding: 4px 8px; font-size: 12px;">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button class="btn btn-outline" style="padding: 4px 8px; font-size: 12px;">
+                                <i class="fas fa-user-check"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>HD-2024071901</td>
+                        <td>
+                            <div style="font-weight: 500;">消防通道堆放杂物</div>
+                            <div style="font-size: 12px; color: #6b7280;">位置：生产车间B区</div>
+                        </td>
+                        <td><span class="status-badge status-warning">环境隐患</span></td>
+                        <td>李四</td>
+                        <td>2024-07-19 14:20</td>
+                        <td><span class="status-badge status-warning">较大风险</span></td>
+                        <td><span class="status-badge status-warning">整改中</span></td>
+                        <td>
+                            <button class="btn btn-outline" style="padding: 4px 8px; font-size: 12px;">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button class="btn btn-outline" style="padding: 4px 8px; font-size: 12px;">
+                                <i class="fas fa-check-circle"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>HD-2024071801</td>
+                        <td>
+                            <div style="font-weight: 500;">高处作业未系安全带</div>
+                            <div style="font-size: 12px; color: #6b7280;">作业人员：王五</div>
+                        </td>
+                        <td><span class="status-badge status-danger">行为隐患</span></td>
+                        <td>赵六</td>
+                        <td>2024-07-18 10:15</td>
+                        <td><span class="status-badge status-danger">重大风险</span></td>
+                        <td><span class="status-badge status-info">待验收</span></td>
+                        <td>
+                            <button class="btn btn-outline" style="padding: 4px 8px; font-size: 12px;">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button class="btn btn-outline" style="padding: 4px 8px; font-size: 12px;">
+                                <i class="fas fa-clipboard-check"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>HD-2024071701</td>
+                        <td>
+                            <div style="font-weight: 500;">危险化学品存储不规范</div>
+                            <div style="font-size: 12px; color: #6b7280;">仓库：化学品库</div>
+                        </td>
+                        <td><span class="status-badge status-warning">管理隐患</span></td>
+                        <td>钱七</td>
+                        <td>2024-07-17 16:45</td>
+                        <td><span class="status-badge status-warning">较大风险</span></td>
+                        <td><span class="status-badge status-success">已完成</span></td>
+                        <td>
+                            <button class="btn btn-outline" style="padding: 4px 8px; font-size: 12px;">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button class="btn btn-outline" style="padding: 4px 8px; font-size: 12px;">
+                                <i class="fas fa-history"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>HD-2024071601</td>
+                        <td>
+                            <div style="font-weight: 500;">电气线路老化</div>
+                            <div style="font-size: 12px; color: #6b7280;">位置：配电室</div>
+                        </td>
+                        <td><span class="status-badge status-info">设备隐患</span></td>
+                        <td>孙八</td>
+                        <td>2024-07-16 08:30</td>
+                        <td><span class="status-badge status-danger">重大风险</span></td>
+                        <td><span class="status-badge status-warning">整改中</span></td>
+                        <td>
+                            <button class="btn btn-outline" style="padding: 4px 8px; font-size: 12px;">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button class="btn btn-outline" style="padding: 4px 8px; font-size: 12px;">
+                                <i class="fas fa-check-circle"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- 风险识别评估 -->
+    <div class="card">
+        <div class="card-header">
+            <div class="card-title">风险识别评估</div>
+            <button class="btn btn-primary">
+                <i class="fas fa-plus"></i>
+                新增风险评估
+            </button>
+        </div>
+        <div class="card-body">
+            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px;">
+                <!-- 风险评估卡片 -->
+                <div class="risk-card">
+                    <div class="risk-header">
+                        <div class="risk-title">高处作业风险</div>
+                        <span class="status-badge status-danger">L值：4</span>
+                    </div>
+                    <div class="risk-body">
+                        <div class="risk-info">
+                            <div class="info-item">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                <span>可能性：3级</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-user-injured"></i>
+                                <span>严重性：4级</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-calculator"></i>
+                                <span>风险值：12</span>
+                            </div>
+                        </div>
+                        <div class="risk-level">
+                            <div class="level-bar">
+                                <div class="level-fill" style="width: 80%; background: #ef4444;"></div>
+                            </div>
+                            <span class="level-text">重大风险</span>
+                        </div>
+                        <div class="risk-actions">
+                            <button class="btn btn-outline" style="flex: 1;">
+                                <i class="fas fa-eye"></i>
+                                查看详情
+                            </button>
+                            <button class="btn btn-primary" style="flex: 1;">
+                                <i class="fas fa-edit"></i>
+                                控制措施
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="risk-card">
+                    <div class="risk-header">
+                        <div class="risk-title">电气设备风险</div>
+                        <span class="status-badge status-warning">L值：3</span>
+                    </div>
+                    <div class="risk-body">
+                        <div class="risk-info">
+                            <div class="info-item">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                <span>可能性：2级</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-user-injured"></i>
+                                <span>严重性：3级</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-calculator"></i>
+                                <span>风险值：6</span>
+                            </div>
+                        </div>
+                        <div class="risk-level">
+                            <div class="level-bar">
+                                <div class="level-fill" style="width: 40%; background: #f59e0b;"></div>
+                            </div>
+                            <span class="level-text">一般风险</span>
+                        </div>
+                        <div class="risk-actions">
+                            <button class="btn btn-outline" style="flex: 1;">
+                                <i class="fas fa-eye"></i>
+                                查看详情
+                            </button>
+                            <button class="btn btn-primary" style="flex: 1;">
+                                <i class="fas fa-edit"></i>
+                                控制措施
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="risk-card">
+                    <div class="risk-header">
+                        <div class="risk-title">化学品泄漏风险</div>
+                        <span class="status-badge status-danger">L值：5</span>
+                    </div>
+                    <div class="risk-body">
+                        <div class="risk-info">
+                            <div class="info-item">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                <span>可能性：1级</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-user-injured"></i>
+                                <span>严重性：5级</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-calculator"></i>
+                                <span>风险值：5</span>
+                            </div>
+                        </div>
+                        <div class="risk-level">
+                            <div class="level-bar">
+                                <div class="level-fill" style="width: 25%; background: #10b981;"></div>
+                            </div>
+                            <span class="level-text">低风险</span>
+                        </div>
+                        <div class="risk-actions">
+                            <button class="btn btn-outline" style="flex: 1;">
+                                <i class="fas fa-eye"></i>
+                                查看详情
+                            </button>
+                            <button class="btn btn-primary" style="flex: 1;">
+                                <i class="fas fa-edit"></i>
+                                控制措施
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 统计分析 -->
+    <div class="card">
+        <div class="card-header">
+            <div class="card-title">隐患统计分析</div>
+            <select class="form-control" style="width: 150px;">
+                <option>本月</option>
+                <option>本季度</option>
+                <option>本年度</option>
+            </select>
+        </div>
+        <div class="card-body">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <!-- 隐患类型分布 -->
+                <div>
+                    <h3 style="margin-bottom: 15px; font-size: 16px; color: #374151;">隐患类型分布</h3>
+                    <div style="display: flex; align-items: center; gap: 20px;">
+                        <div style="width: 150px; height: 150px; position: relative;">
+                            <!-- 饼图示意 -->
+                            <div style="width: 100%; height: 100%; border-radius: 50%; background: conic-gradient(
+                                #ef4444 0% 40%,
+                                #f59e0b 40% 70%,
+                                #3b82f6 70% 85%,
+                                #10b981 85% 100%
+                            );"></div>
+                        </div>
+                        <div style="flex: 1;">
+                            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px;">
+                                <div style="width: 12px; height: 12px; background: #ef4444; border-radius: 2px;"></div>
+                                <span>设备隐患：45%</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px;">
+                                <div style="width: 12px; height: 12px; background: #f59e0b; border-radius: 2px;"></div>
+                                <span>环境隐患：30%</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px;">
+                                <div style="width: 12px; height: 12px; background: #3b82f6; border-radius: 2px;"></div>
+                                <span>管理隐患：15%</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 8px;">
+                                <div style="width: 12px; height: 12px; background: #10b981; border-radius: 2px;"></div>
+                                <span>行为隐患：10%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 整改趋势 -->
+                <div>
+                    <h3 style="margin-bottom: 15px; font-size: 16px; color: #374151;">月度整改趋势</h3>
+                    <div style="background: #f8fafc; padding: 20px; border-radius: 8px; height: 200px; display: flex; align-items: end; gap: 15px;">
+                        <div style="flex: 1; display: flex; flex-direction: column; align-items: center;">
+                            <div style="background: #3b82f6; height: 80px; width: 25px; border-radius: 4px 4px 0 0;"></div>
+                            <div style="font-size: 12px; margin-top: 5px;">1月</div>
+                        </div>
+                        <div style="flex: 1; display: flex; flex-direction: column; align-items: center;">
+                            <div style="background: #3b82f6; height: 120px; width: 25px; border-radius: 4px 4px 0 0;"></div>
+                            <div style="font-size: 12px; margin-top: 5px;">2月</div>
+                        </div>
+                        <div style="flex: 1; display: flex; flex-direction: column; align-items: center;">
+                            <div style="background: #10b981; height: 160px; width: 25px; border-radius: 4px 4px 0 0;"></div>
+                            <div style="font-size: 12px; margin-top: 5px;">3月</div>
+                        </div>
+                        <div style="flex: 1; display: flex; flex-direction: column; align-items: center;">
+                            <div style="background: #10b981; height: 140px; width: 25px; border-radius: 4px 4px 0 0;"></div>
+                            <div style="font-size: 12px; margin-top: 5px;">4月</div>
+                        </div>
+                        <div style="flex: 1; display: flex; flex-direction: column; align-items: center;">
+                            <div style="background: #10b981; height: 180px; width: 25px; border-radius: 4px 4px 0 0;"></div>
+                            <div style="font-size: 12px; margin-top: 5px;">5月</div>
+                        </div>
+                        <div style="flex: 1; display: flex; flex-direction: column; align-items: center;">
+                            <div style="background: #10b981; height: 200px; width: 25px; border-radius: 4px 4px 0 0;"></div>
+                            <div style="font-size: 12px; margin-top: 5px;">6月</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .risk-card {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 0;
+            overflow: hidden;
+        }
+        
+        .risk-header {
+            padding: 15px;
+            background: #f8fafc;
+            border-bottom: 1px solid #e5e7eb;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .risk-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #374151;
+        }
+        
+        .risk-body {
+            padding: 15px;
+        }
+        
+        .risk-info {
+            margin-bottom: 15px;
+        }
+        
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: #6b7280;
+        }
+        
+        .risk-level {
+            margin-bottom: 15px;
+        }
+        
+        .level-bar {
+            width: 100%;
+            height: 8px;
+            background: #e5e7eb;
+            border-radius: 4px;
+            margin-bottom: 5px;
+        }
+        
+        .level-fill {
+            height: 100%;
+            border-radius: 4px;
+            transition: width 0.3s ease;
+        }
+        
+        .level-text {
+            font-size: 12px;
+            color: #6b7280;
+            text-align: center;
+            display: block;
+        }
+        
+        .risk-actions {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .risk-actions .btn {
+            flex: 1;
+            padding: 8px 12px;
+            font-size: 12px;
+        }
+    </style>
+</body>
+</html>

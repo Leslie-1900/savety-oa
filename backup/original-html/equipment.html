@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>现场设备管理 - 安全生产管理系统</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="page-header">
+        <h1 class="page-title">现场设备管理</h1>
+        <p class="page-description">管理设备设施、巡检计划和危险作业审批</p>
+    </div>
+
+    <!-- 统计卡片 -->
+    <div class="stats-grid">
+        <div class="stat-card">
+            <div class="stat-icon" style="background: #3b82f6;">
+                <i class="fas fa-cogs"></i>
+            </div>
+            <div class="stat-content">
+                <div class="stat-number">156</div>
+                <div class="stat-label">设备总数</div>
+            </div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon" style="background: #10b981;">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <div class="stat-content">
+                <div class="stat-number">142</div>
+                <div class="stat-label">正常运行</div>
+            </div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon" style="background: #f59e0b;">
+                <i class="fas fa-tools"></i>
+            </div>
+            <div class="stat-content">
+                <div class="stat-number">8</div>
+                <div class="stat-label">维修中</div>
+            </div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon" style="background: #ef4444;">
+                <i class="fas fa-exclamation-triangle"></i>
+            </div>
+            <div class="stat-content">
+                <div class="stat-number">6</div>
+                <div class="stat-label">待检修</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 操作工具栏 -->
+    <div class="card">
+        <div class="card-body">
+            <div style="display: flex; gap: 10px; align-items: center;">
+                <button class="btn btn-primary">
+                    <i class="fas fa-plus"></i>
+                    新增设备
+                </button>
+                <button class="btn btn-success">
+                    <i class="fas fa-clipboard-check"></i>
+                    巡检计划
+                </button>
+                <button class="btn btn-warning">
+                    <i class="fas fa-file-alt"></i>
+                    作业票管理
+                </button>
+                <button class="btn btn-outline">
+                    <i class="fas fa-history"></i>
+                    维护记录
+                </button>
+                <div style="flex: 1;"></div>
+                <select class="form-control" style="width: 150px;">
+                    <option>全部设备</option>
+                    <option>生产设备</option>
+                    <option>检测设备</option>
+                    <option>安全设备</option>
+                </select>
+                <select class="form-control" style="width: 150px;">
+                    <option>全部状态</option>
+                    <option>正常运行</option>
+                    <option>维修中</option>
+                    <option>待检修</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <!-- 设备列表 -->
+    <div class="card">
+        <div class="card-header">
+            <div class="card-title">设备列表</div>
+            <div style="display: flex; gap: 10px; align-items: center;">
+                <div style="display: flex; gap: 5px;">
+                    <span class="status-badge status-success">正常 142</span>
+                    <span class="status-badge status-warning">维修 8</span>
+                    <span class="status-badge status-danger">待修 6</span>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>设备编号</th>
+                        <th>设备名称</th>
+                        <th>设备类型</th>
+                        <th>所属部门</th>
+                        <th>责任人</th>
+                        <th>上次巡检</th>
+                        <th>状态</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>EQ-2024-001</td>
+                        <td>
+                            <div style="font-weight: 500;">数控机床</div>
+                            <div style="font-size: 12px; color: #6b7280;">型号：CK6150</div>
+                        </td>
+                        <td>生产设备</td>
+                        <td>生产车间</td>
+                        <td>张三</td>
+                        <td>2024-07-15</td>
+                        <td><span class="status-badge status-success">正常运行</span></td>
+                        <td>
+                            <button class="btn btn-outline" style="padding: 4px 8px; font-size: 12px;">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button class="btn btn-outline" style="padding: 4px 8px; font-size: 12px;">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>EQ-2024-002</td>
+                        <td>
+                            <div style="font-weight: 500;">空压机</div>
+                            <div style="font-size: 12px; color: #6b7280;">型号：GA37</div>
+                        </td>
+                        <td>生产设备</td>
+                        <td>生产车间</td>
+                        <td>李四</td>
+                        <td>2024-07-10</td>
+                        <td><span class="status-badge status-warning">维修中</span></td>
+                        <td>
+                            <button class="btn btn-outline" style="padding: 4px 8px; font-size: 12px;">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button class="btn btn-outline" style="padding: 4px 8px; font-size: 12px;">
+                                <i class="fas fa-tools"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>EQ-2024-003</td>
+                        <td>
+                            <div style="font-weight: 500;">消防水泵</div>
+                            <div style="font-size: 12px; color: #6b7280;">型号：XBD5.0/40</div>
+                        </td>
+                        <td>安全设备</td>
+                        <td>安全管理部门</td>
+                        <td>王五</td>
+                        <td>2024-07-18</td>
+                        <td><span class="status-badge status-success">正常运行</span></td>
+                        <td>
+                            <button class="btn btn-outline" style="padding: 4px 8px; font-size: 12px;">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button class="btn btn-outline" style="padding: 4px 8px; font-size: 12px;">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>EQ-2024-004</td>
+                        <td>
+                            <div style="font-weight: 500;">气体检测仪</div>
+                            <div style="font-size: 12px; color: #6b7280;">型号：GT-1000</div>
+                        </td>
+                        <td>检测设备</td>
+                        <td>安全监督</td>
+                        <td>赵六</td>
+                        <td>2024-07-12</td>
+                        <td><span class="status-badge status-danger">待检修</span></td>
+                        <td>
+                            <button class="btn btn-outline" style="padding: 4px 8px; font-size: 12px;">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button class="btn btn-outline" style="padding: 4px 8px; font-size: 12px;">
+                                <i class="fas fa-tools"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>EQ-2024-005</td>
+                        <td>
+                            <div style="font-weight: 500;">电动葫芦</div>
+                            <div style="font-size: 12px; color: #6b7280;">型号：CD1-3T</div>
+                        </td>
+                        <td>起重设备</td>
+                        <td>仓储物流</td>
+                        <td>钱七</td>
+                        <td>2024-07-20</td>
+                        <td><span class="status-badge status-success">正常运行</span></td>
+                        <td>
+                            <button class="btn btn-outline" style="padding: 4px 8px; font-size: 12px;">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button class="btn btn-outline" style="padding: 4px 8px; font-size: 12px;">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- 巡检计划 -->
+    <div class="card">
+        <div class="card-header">
+            <div class="card-title">巡检计划</div>
+            <button class="btn btn-primary">
+                <i class="fas fa-plus"></i>
+                新增计划
+            </button>
+        </div>
+        <div class="card-body">
+            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 20px;">
+                <!-- 巡检计划卡片 -->
+                <div class="inspection-card">
+                    <div class="inspection-header">
+                        <div class="inspection-title">日常设备巡检</div>
+                        <span class="status-badge status-success">进行中</span>
+                    </div>
+                    <div class="inspection-body">
+                        <div class="inspection-info">
+                            <div class="info-row">
+                                <i class="fas fa-calendar"></i>
+                                <span>周期：每日</span>
+                            </div>
+                            <div class="info-row">
+                                <i class="fas fa-user"></i>
+                                <span>责任人：张三</span>
+                            </div>
+                            <div class="info-row">
+                                <i class="fas fa-cogs"></i>
+                                <span>设备数：45台</span>
+                            </div>
+                            <div class="info-row">
+                                <i class="fas fa-check-circle"></i>
+                                <span>完成率：98%</span>
+                            </div>
+                        </div>
+                        <div class="inspection-actions">
+                            <button class="btn btn-outline" style="flex: 1;">
+                                <i class="fas fa-eye"></i>
+                                查看详情
+                            </button>
+                            <button class="btn btn-primary" style="flex: 1;">
+                                <i class="fas fa-clipboard-list"></i>
+                                巡检记录
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="inspection-card">
+                    <div class="inspection-header">
+                        <div class="inspection-title">月度安全设备检查</div>
+                        <span class="status-badge status-warning">待开始</span>
+                    </div>
+                    <div class="inspection-body">
+                        <div class="inspection-info">
+                            <div class="info-row">
+                                <i class="fas fa-calendar"></i>
+                                <span>周期：每月</span>
+                            </div>
+                            <div class="info-row">
+                                <i class="fas fa-user"></i>
+                                <span>责任人：李四</span>
+                            </div>
+                            <div class="info-row">
+                                <i class="fas fa-cogs"></i>
+                                <span>设备数：28台</span>
+                            </div>
+                            <div class="info-row">
+                                <i class="fas fa-clock"></i>
+                                <span>下次检查：8月1日</span>
+                            </div>
+                        </div>
+                        <div class="inspection-actions">
+                            <button class="btn btn-outline" style="flex: 1;">
+                                <i class="fas fa-edit"></i>
+                                编辑计划
+                            </button>
+                            <button class="btn btn-warning" style="flex: 1;">
+                                <i class="fas fa-bullhorn"></i>
+                                发送提醒
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 危险作业票 -->
+    <div class="card">
+        <div class="card-header">
+            <div class="card-title">危险作业票管理</div>
+            <button class="btn btn-primary">
+                <i class="fas fa-plus"></i>
+                新增作业票
+            </button>
+        </div>
+        <div class="card-body">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>作业票编号</th>
+                        <th>作业类型</th>
+                        <th>作业地点</th>
+                        <th>申请人</th>
+                        <th>申请时间</th>
+                        <th>审批状态</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>WT-2024072001</td>
+                        <td><span class="status-badge status-danger">动火作业</span></td>
+                        <td>生产车间A区</td>
+                        <td>张三</td>
+                        <td>2024-07-20 09:30</td>
+                        <td><span class="status-badge status-warning">待审批</span></td>
+                        <td>
+                            <button class="btn btn-outline" style="padding: 4px 8px; font-size: 12px;">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button class="btn btn-outline" style="padding: 4px 8px; font-size: 12px;">
+                                <i class="fas fa-check"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>WT-2024071901</td>
+                        <td><span class="status-badge status-warning">高处作业</span></td>
+                        <td>仓库顶棚</td>
+                        <td>李四</td>
+                        <td>2024-07-19 14:20</td>
+                        <td><span class="status-badge status-success">已批准</span></td>
+                        <td>
+                            <button class="btn btn-outline" style="padding: 4px 8px; font-size: 12px;">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button class="btn btn-outline" style="padding: 4px 8px; font-size: 12px;">
+                                <i class="fas fa-file-pdf"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>WT-2024071801</td>
+                        <td><span class="status-badge status-info">受限空间</span></td>
+                        <td>储罐内部</td>
+                        <td>王五</td>
+                        <td>2024-07-18 10:15</td>
+                        <td><span class="status-badge status-success">已完成</span></td>
+                        <td>
+                            <button class="btn btn-outline" style="padding: 4px 8px; font-size: 12px;">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button class="btn btn-outline" style="padding: 4px 8px; font-size: 12px;">
+                                <i class="fas fa-history"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <style>
+        .inspection-card {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 0;
+            overflow: hidden;
+        }
+        
+        .inspection-header {
+            padding: 15px;
+            background: #f8fafc;
+            border-bottom: 1px solid #e5e7eb;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .inspection-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #374151;
+        }
+        
+        .inspection-body {
+            padding: 15px;
+        }
+        
+        .inspection-info {
+            margin-bottom: 15px;
+        }
+        
+        .info-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: #6b7280;
+        }
+        
+        .inspection-actions {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .inspection-actions .btn {
+            flex: 1;
+            padding: 8px 12px;
+            font-size: 12px;
+        }
+    </style>
+</body>
+</html>

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>组织架构管理 - 安全生产管理系统</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="page-header">
+        <h1 class="page-title">组织架构管理</h1>
+        <p class="page-description">管理企业组织架构、部门设置和人员信息</p>
+    </div>
+
+    <!-- 操作工具栏 -->
+    <div class="card">
+        <div class="card-body">
+            <div style="display: flex; gap: 10px; align-items: center;">
+                <button class="btn btn-primary">
+                    <i class="fas fa-plus"></i>
+                    新增部门
+                </button>
+                <button class="btn btn-success">
+                    <i class="fas fa-user-plus"></i>
+                    新增人员
+                </button>
+                <button class="btn btn-outline">
+                    <i class="fas fa-sync"></i>
+                    刷新数据
+                </button>
+                <div style="flex: 1;"></div>
+                <div style="position: relative;">
+                    <input type="text" class="form-control" placeholder="搜索部门或人员..." style="width: 300px;">
+                    <i class="fas fa-search" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); color: #6b7280;"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 300px 1fr; gap: 20px;">
+        <!-- 组织树 -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">组织架构树</div>
+            </div>
+            <div class="card-body">
+                <div style="max-height: 600px; overflow-y: auto;">
+                    <div class="org-tree">
+                        <div class="org-node active">
+                            <i class="fas fa-building"></i>
+                            <span>XX科技有限公司</span>
+                        </div>
+                        <div class="org-children">
+                            <div class="org-node">
+                                <i class="fas fa-users"></i>
+                                <span>管理层</span>
+                                <span class="org-count">5人</span>
+                            </div>
+                            <div class="org-node expanded">
+                                <i class="fas fa-industry"></i>
+                                <span>生产部门</span>
+                                <span class="org-count">86人</span>
+                            </div>
+                            <div class="org-children">
+                                <div class="org-node">
+                                    <i class="fas fa-cogs"></i>
+                                    <span>生产车间</span>
+                                    <span class="org-count">45人</span>
+                                </div>
+                                <div class="org-node">
+                                    <i class="fas fa-warehouse"></i>
+                                    <span>仓储物流</span>
+                                    <span class="org-count">25人</span>
+                                </div>
+                                <div class="org-node">
+                                    <i class="fas fa-tools"></i>
+                                    <span>设备维护</span>
+                                    <span class="org-count">16人</span>
+                                </div>
+                            </div>
+                            <div class="org-node expanded">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>安全管理部门</span>
+                                <span class="org-count">12人</span>
+                            </div>
+                            <div class="org-children">
+                                <div class="org-node">
+                                    <i class="fas fa-user-shield"></i>
+                                    <span>安全监督</span>
+                                    <span class="org-count">8人</span>
+                                </div>
+                                <div class="org-node">
+                                    <i class="fas fa-first-aid"></i>
+                                    <span>应急管理</span>
+                                    <span class="org-count">4人</span>
+                                </div>
+                            </div>
+                            <div class="org-node">
+                                <i class="fas fa-graduation-cap"></i>
+                                <span>人力资源部</span>
+                                <span class="org-count">8人</span>
+                            </div>
+                            <div class="org-node">
+                                <i class="fas fa-laptop"></i>
+                                <span>IT部门</span>
+                                <span class="org-count">6人</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 人员列表 -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">人员列表</div>
+                <span class="status-badge status-info">共 117 人</span>
+            </div>
+            <div class="card-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>姓名</th>
+                            <th>工号</th>
+                            <th>部门</th>
+                            <th>岗位</th>
+                            <th>联系方式</th>
+                            <th>状态</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div style="display: flex; align-items: center; gap: 8px;">
+                                    <div class="user-avatar" style="width: 32px; height: 32px; font-size: 12px;">张</div>
+                                    <span>张三</span>
+                                </div>
+                            </td>
+                            <td>EMP001</td>
+                            <td>安全管理部门</td>
+                            <td>安全专员</td>
+                            <td>138****1234</td>
+                            <td><span class="status-badge status-success">在职</span></td>
+                            <td>
+                                <button class="btn btn-outline" style="padding: 4px 8px; font-size: 12px;">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="btn btn-outline" style="padding: 4px 8px; font-size: 12px;">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div style="display: flex; align-items: center; gap: 8px;">
+                                    <div class="user-avatar" style="width: 32px; height: 32px; font-size: 12px;">李</div>
+                                    <span>李四</span>
+                                </div>
+                            </td>
+                            <td>EMP002</td>
+                            <td>生产车间</td>
+                            <td>操作工</td>
+                            <td>139****5678</td>
+                            <td><span class="status-badge status-success">在职</span></td>
+                            <td>
+                                <button class="btn btn-outline" style="padding: 4px 8px; font-size: 12px;">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="btn btn-outline" style="padding: 4px 8px; font-size: 12px;">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div style="display: flex; align-items: center; gap: 8px;">
+                                    <div class="user-avatar" style="width: 32px; height: 32px; font-size: 12px;">王</div>
+                                    <span>王五</span>
+                                </div>
+                            </td>
+                            <td>EMP003</td>
+                            <td>设备维护</td>
+                            <td>维修工程师</td>
+                            <td>136****9012</td>
+                            <td><span class="status-badge status-success">在职</span></td>
+                            <td>
+                                <button class="btn btn-outline" style="padding: 4px 8px; font-size: 12px;">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="btn btn-outline" style="padding: 4px 8px; font-size: 12px;">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div style="display: flex; align-items: center; gap: 8px;">
+                                    <div class="user-avatar" style="width: 32px; height: 32px; font-size: 12px;">赵</div>
+                                    <span>赵六</span>
+                                </div>
+                            </td>
+                            <td>EMP004</td>
+                            <td>应急管理</td>
+                            <td>应急专员</td>
+                            <td>135****3456</td>
+                            <td><span class="status-badge status-warning">休假</span></td>
+                            <td>
+                                <button class="btn btn-outline" style="padding: 4px 8px; font-size: 12px;">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="btn btn-outline" style="padding: 4px 8px; font-size: 12px;">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div style="display: flex; align-items: center; gap: 8px;">
+                                    <div class="user-avatar" style="width: 32px; height: 32px; font-size: 12px;">钱</div>
+                                    <span>钱七</span>
+                                </div>
+                            </td>
+                            <td>EMP005</td>
+                            <td>人力资源部</td>
+                            <td>培训专员</td>
+                            <td>137****7890</td>
+                            <td><span class="status-badge status-success">在职</span></td>
+                            <td>
+                                <button class="btn btn-outline" style="padding: 4px 8px; font-size: 12px;">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="btn btn-outline" style="padding: 4px 8px; font-size: 12px;">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <!-- 分页 -->
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 20px;">
+                    <div style="color: #6b7280; font-size: 14px;">
+                        显示 1-5 条，共 117 条记录
+                    </div>
+                    <div style="display: flex; gap: 5px;">
+                        <button class="btn btn-outline" style="padding: 6px 12px;">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="btn btn-primary" style="padding: 6px 12px;">1</button>
+                        <button class="btn btn-outline" style="padding: 6px 12px;">2</button>
+                        <button class="btn btn-outline" style="padding: 6px 12px;">3</button>
+                        <button class="btn btn-outline" style="padding: 6px 12px;">
+                            <i class="fas fa-ellipsis-h"></i>
+                        </button>
+                        <button class="btn btn-outline" style="padding: 6px 12px;">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .org-tree {
+            font-size: 14px;
+        }
+        
+        .org-node {
+            padding: 8px 12px;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-bottom: 2px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .org-node:hover {
+            background-color: #f3f4f6;
+        }
+        
+        .org-node.active {
+            background-color: #dbeafe;
+            color: #1e40af;
+        }
+        
+        .org-node.expanded {
+            font-weight: 600;
+        }
+        
+        .org-children {
+            margin-left: 20px;
+            border-left: 2px solid #e5e7eb;
+            padding-left: 10px;
+        }
+        
+        .org-count {
+            margin-left: auto;
+            background: #f3f4f6;
+            padding: 2px 6px;
+            border-radius: 10px;
+            font-size: 12px;
+            color: #6b7280;
+        }
+    </style>
+</body>
+</html>

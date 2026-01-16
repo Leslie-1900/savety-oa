@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>教育培训管理 - 安全生产管理系统</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="page-header">
+        <h1 class="page-title">教育培训管理</h1>
+        <p class="page-description">管理安全培训课程、在线学习和考试评估</p>
+    </div>
+
+    <!-- 统计卡片 -->
+    <div class="stats-grid">
+        <div class="stat-card">
+            <div class="stat-icon" style="background: #3b82f6;">
+                <i class="fas fa-book"></i>
+            </div>
+            <div class="stat-content">
+                <div class="stat-number">28</div>
+                <div class="stat-label">培训课程</div>
+            </div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon" style="background: #10b981;">
+                <i class="fas fa-user-graduate"></i>
+            </div>
+            <div class="stat-content">
+                <div class="stat-number">156</div>
+                <div class="stat-label">已完成培训</div>
+            </div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon" style="background: #f59e0b;">
+                <i class="fas fa-clipboard-list"></i>
+            </div>
+            <div class="stat-content">
+                <div class="stat-number">5</div>
+                <div class="stat-label">进行中培训</div>
+            </div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon" style="background: #ef4444;">
+                <i class="fas fa-exclamation-circle"></i>
+            </div>
+            <div class="stat-content">
+                <div class="stat-number">12</div>
+                <div class="stat-label">待参加培训</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 操作工具栏 -->
+    <div class="card">
+        <div class="card-body">
+            <div style="display: flex; gap: 10px; align-items: center;">
+                <button class="btn btn-primary">
+                    <i class="fas fa-plus"></i>
+                    新增课程
+                </button>
+                <button class="btn btn-success">
+                    <i class="fas fa-tasks"></i>
+                    培训计划
+                </button>
+                <button class="btn btn-warning">
+                    <i class="fas fa-file-alt"></i>
+                    创建考试
+                </button>
+                <button class="btn btn-outline">
+                    <i class="fas fa-chart-bar"></i>
+                    培训统计
+                </button>
+                <div style="flex: 1;"></div>
+                <select class="form-control" style="width: 150px;">
+                    <option>全部类型</option>
+                    <option>新员工培训</option>
+                    <option>特种作业</option>
+                    <option>年度复训</option>
+                    <option>专项培训</option>
+                </select>
+                <select class="form-control" style="width: 150px;">
+                    <option>全部状态</option>
+                    <option>进行中</option>
+                    <option>已完成</option>
+                    <option>未开始</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <!-- 课程列表 -->
+    <div class="card">
+        <div class="card-header">
+            <div class="card-title">培训课程列表</div>
+            <div style="display: flex; gap: 10px; align-items: center;">
+                <div style="display: flex; gap: 5px;">
+                    <span class="status-badge status-success">已完成 18</span>
+                    <span class="status-badge status-warning">进行中 5</span>
+                    <span class="status-badge status-info">未开始 5</span>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px;">
+                <!-- 课程卡片 -->
+                <div class="course-card">
+                    <div class="course-header" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                        <div class="course-title">新员工安全入职培训</div>
+                        <div class="course-type">新员工培训</div>
+                    </div>
+                    <div class="course-body">
+                        <div class="course-info">
+                            <div class="info-item">
+                                <i class="fas fa-clock"></i>
+                                <span>2小时</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-users"></i>
+                                <span>86人已参加</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-star"></i>
+                                <span>4.8分</span>
+                            </div>
+                        </div>
+                        <div class="course-progress">
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 100%; background: #10b981;"></div>
+                            </div>
+                            <span class="progress-text">100% 完成率</span>
+                        </div>
+                        <div class="course-actions">
+                            <button class="btn btn-outline" style="flex: 1;">
+                                <i class="fas fa-eye"></i>
+                                查看详情
+                            </button>
+                            <button class="btn btn-primary" style="flex: 1;">
+                                <i class="fas fa-chart-bar"></i>
+                                统计分析
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-header" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                        <div class="course-title">消防安全知识培训</div>
+                        <div class="course-type">年度复训</div>
+                    </div>
+                    <div class="course-body">
+                        <div class="course-info">
+                            <div class="info-item">
+                                <i class="fas fa-clock"></i>
+                                <span>3小时</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-users"></i>
+                                <span>45人已参加</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-star"></i>
+                                <span>4.6分</span>
+                            </div>
+                        </div>
+                        <div class="course-progress">
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 85%; background: #f59e0b;"></div>
+                            </div>
+                            <span class="progress-text">85% 完成率</span>
+                        </div>
+                        <div class="course-actions">
+                            <button class="btn btn-outline" style="flex: 1;">
+                                <i class="fas fa-edit"></i>
+                                编辑课程
+                            </button>
+                            <button class="btn btn-primary" style="flex: 1;">
+                                <i class="fas fa-user-plus"></i>
+                                分配学员
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-header" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                        <div class="course-title">高处作业安全培训</div>
+                        <div class="course-type">特种作业</div>
+                    </div>
+                    <div class="course-body">
+                        <div class="course-info">
+                            <div class="info-item">
+                                <i class="fas fa-clock"></i>
+                                <span>4小时</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-users"></i>
+                                <span>25人已参加</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-star"></i>
+                                <span>4.9分</span>
+                            </div>
+                        </div>
+                        <div class="course-progress">
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 65%; background: #ef4444;"></div>
+                            </div>
+                            <span class="progress-text">65% 完成率</span>
+                        </div>
+                        <div class="course-actions">
+                            <button class="btn btn-outline" style="flex: 1;">
+                                <i class="fas fa-edit"></i>
+                                编辑课程
+                            </button>
+                            <button class="btn btn-warning" style="flex: 1;">
+                                <i class="fas fa-bullhorn"></i>
+                                发送提醒
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 考试管理 -->
+    <div class="card">
+        <div class="card-header">
+            <div class="card-title">考试管理</div>
+            <button class="btn btn-primary">
+                <i class="fas fa-plus"></i>
+                新增考试
+            </button>
+        </div>
+        <div class="card-body">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>考试名称</th>
+                        <th>关联课程</th>
+                        <th>考试时间</th>
+                        <th>参与人数</th>
+                        <th>平均分数</th>
+                        <th>通过率</th>
+                        <th>状态</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>新员工安全知识考试</td>
+                        <td>新员工安全入职培训</td>
+                        <td>2024-06-15</td>
+                        <td>86</td>
+                        <td>92.5</td>
+                        <td>98%</td>
+                        <td><span class="status-badge status-success">已完成</span></td>
+                        <td>
+                            <button class="btn btn-outline" style="padding: 4px 8px; font-size: 12px;">
+                                <i class="fas fa-chart-bar"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>消防安全知识考试</td>
+                        <td>消防安全知识培训</td>
+                        <td>2024-07-20</td>
+                        <td>45</td>
+                        <td>88.3</td>
+                        <td>93%</td>
+                        <td><span class="status-badge status-warning">进行中</span></td>
+                        <td>
+                            <button class="btn btn-outline" style="padding: 4px 8px; font-size: 12px;">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>高处作业安全考试</td>
+                        <td>高处作业安全培训</td>
+                        <td>2024-08-10</td>
+                        <td>25</td>
+                        <td>85.6</td>
+                        <td>88%</td>
+                        <td><span class="status-badge status-info">未开始</span></td>
+                        <td>
+                            <button class="btn btn-outline" style="padding: 4px 8px; font-size: 12px;">
+                                <i class="fas fa-cog"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <style>
+        .course-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        
+        .course-card:hover {
+            transform: translateY(-2px);
+        }
+        
+        .course-header {
+            padding: 20px;
+            color: white;
+        }
+        
+        .course-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .course-type {
+            font-size: 12px;
+            opacity: 0.9;
+        }
+        
+        .course-body {
+            padding: 15px;
+        }
+        
+        .course-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+        
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 12px;
+            color: #6b7280;
+        }
+        
+        .course-progress {
+            margin-bottom: 15px;
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 6px;
+            background: #e5e7eb;
+            border-radius: 3px;
+            margin-bottom: 5px;
+        }
+        
+        .progress {
+            height: 100%;
+            border-radius: 3px;
+            transition: width 0.3s ease;
+        }
+        
+        .progress-text {
+            font-size: 12px;
+            color: #6b7280;
+        }
+        
+        .course-actions {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .course-actions .btn {
+            flex: 1;
+            padding: 8px 12px;
+            font-size: 12px;
+        }
+    </style>
+</body>
+</html>

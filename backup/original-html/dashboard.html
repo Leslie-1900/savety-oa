@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>工作台 - 安全生产管理系统</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="page-header">
+        <h1 class="page-title">安全生产管理驾驶舱</h1>
+        <p class="page-description">实时监控企业安全生产状况，快速掌握关键指标</p>
+    </div>
+
+    <!-- 统计卡片 -->
+    <div class="stats-grid">
+        <div class="stat-card">
+            <div class="stat-icon" style="background: #3b82f6;">
+                <i class="fas fa-exclamation-triangle"></i>
+            </div>
+            <div class="stat-content">
+                <div class="stat-number">12</div>
+                <div class="stat-label">待处理隐患</div>
+            </div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon" style="background: #10b981;">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <div class="stat-content">
+                <div class="stat-number">156</div>
+                <div class="stat-label">已整改隐患</div>
+            </div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon" style="background: #f59e0b;">
+                <i class="fas fa-tools"></i>
+            </div>
+            <div class="stat-content">
+                <div class="stat-number">8</div>
+                <div class="stat-label">待审批作业票</div>
+            </div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon" style="background: #ef4444;">
+                <i class="fas fa-car-crash"></i>
+            </div>
+            <div class="stat-content">
+                <div class="stat-number">2</div>
+                <div class="stat-label">本月事故数</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 快速操作 -->
+    <div class="card">
+        <div class="card-header">
+            <div class="card-title">快速操作</div>
+        </div>
+        <div class="card-body">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+                <button class="btn btn-primary">
+                    <i class="fas fa-plus"></i>
+                    新增隐患上报
+                </button>
+                <button class="btn btn-success">
+                    <i class="fas fa-file-alt"></i>
+                    创建作业票
+                </button>
+                <button class="btn btn-warning">
+                    <i class="fas fa-bullhorn"></i>
+                    应急响应
+                </button>
+                <button class="btn btn-outline">
+                    <i class="fas fa-chart-bar"></i>
+                    生成报告
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+        <!-- 待办事项 -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">待办事项</div>
+                <span class="status-badge status-danger">5项待处理</span>
+            </div>
+            <div class="card-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>事项</th>
+                            <th>类型</th>
+                            <th>截止时间</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>高处作业审批</td>
+                            <td><span class="status-badge status-warning">作业票</span></td>
+                            <td>今天 15:00</td>
+                        </tr>
+                        <tr>
+                            <td>设备巡检计划制定</td>
+                            <td><span class="status-badge status-info">计划</span></td>
+                            <td>明天</td>
+                        </tr>
+                        <tr>
+                            <td>安全隐患整改验收</td>
+                            <td><span class="status-badge status-danger">隐患</span></td>
+                            <td>今天 17:00</td>
+                        </tr>
+                        <tr>
+                            <td>安全培训课程审核</td>
+                            <td><span class="status-badge status-success">培训</span></td>
+                            <td>本周五</td>
+                        </tr>
+                        <tr>
+                            <td>应急预案修订</td>
+                            <td><span class="status-badge status-warning">应急</span></td>
+                            <td>下周一</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- 最新动态 -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">最新动态</div>
+            </div>
+            <div class="card-body">
+                <div style="display: flex; flex-direction: column; gap: 15px;">
+                    <div style="display: flex; align-items: start; gap: 10px;">
+                        <div style="width: 8px; height: 8px; background: #3b82f6; border-radius: 50%; margin-top: 6px;"></div>
+                        <div>
+                            <div style="font-weight: 500;">张三 上报了新的安全隐患</div>
+                            <div style="font-size: 12px; color: #6b7280;">生产车间设备漏电隐患 · 5分钟前</div>
+                        </div>
+                    </div>
+                    <div style="display: flex; align-items: start; gap: 10px;">
+                        <div style="width: 8px; height: 8px; background: #10b981; border-radius: 50%; margin-top: 6px;"></div>
+                        <div>
+                            <div style="font-weight: 500;">李四 完成了安全培训</div>
+                            <div style="font-size: 12px; color: #6b7280;">《消防安全知识》考试通过 · 1小时前</div>
+                        </div>
+                    </div>
+                    <div style="display: flex; align-items: start; gap: 10px;">
+                        <div style="width: 8px; height: 8px; background: #f59e0b; border-radius: 50%; margin-top: 6px;"></div>
+                        <div>
+                            <div style="font-weight: 500;">王五 提交了作业票申请</div>
+                            <div style="font-size: 12px; color: #6b7280;">动火作业审批 · 2小时前</div>
+                        </div>
+                    </div>
+                    <div style="display: flex; align-items: start; gap: 10px;">
+                        <div style="width: 8px; height: 8px; background: #ef4444; border-radius: 50%; margin-top: 6px;"></div>
+                        <div>
+                            <div style="font-weight: 500;">应急演练计划已发布</div>
+                            <div style="font-size: 12px; color: #6b7280;">消防应急演练 · 3小时前</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

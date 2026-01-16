@@ -1,0 +1,20 @@
+/* App组件样式 */
+.app-container {
+  min-height: 100vh;
+}
+
+.page-header {
+  margin-bottom: 2rem;
+}
+
+.page-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+
+.page-description {
+  color: #6b7280;
+  font-size: 1rem;
+}
